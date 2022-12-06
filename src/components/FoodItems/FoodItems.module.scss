@@ -1,0 +1,12 @@
+.title {
+    margin-bottom: 35px;
+    font-size: 36px;
+    color: #212629;
+}
+
+.items{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 30px;
+    margin-bottom: 150px;
+}
