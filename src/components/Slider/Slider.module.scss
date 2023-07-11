@@ -1,0 +1,91 @@
+.slider {
+    padding-bottom: 150px;
+    overflow: hidden;
+
+    :global {
+        .swiper {
+            overflow: visible;
+        }
+
+        .swiper-pagination {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            position: absolute;
+            z-index: 10;
+            bottom: 52px;
+            left: 50px;
+        }
+
+        .swiper-pagination-bullet {
+            display: inline-block;
+            background: rgba(233, 233, 233, 0.25);
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            
+            cursor: pointer;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: transparent;
+            border: 1px solid #FFFFFF;
+            width: 15px;
+            height: 15px;
+        }
+    }
+
+    .item {
+        background: #212629;
+        box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.05), 40px 40px 50px rgba(0, 0, 0, 0.5);
+        border-radius: 80px 80px 80px 5px;
+        padding: 50px 12px 52px 50px;
+        min-height: 500px;
+        max-height: 500px;
+        user-select: none;
+        display: flex;
+        justify-content: space-between;
+
+        &.yellow {
+            background: #FE9102;
+        }
+
+        .title {
+            font-size: 50px;
+            line-height: 62px;
+            color: #fff;
+            margin-bottom: 35px;
+            max-width: 563px;
+            width: 563px;
+        }
+
+        .btn {
+            color: #FE9102;
+            padding: 10px 10px 10px 30px;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            background: #212629;
+            box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5), -1px -1px 6px rgba(255, 255, 255, 0.05), -5px -5px 20px rgba(255, 255, 255, 0.1), 5px 5px 20px rgba(0, 0, 0, 0.8);
+            border-radius: 99px;
+            margin-bottom: 120px;
+            
+
+            &:hover {
+                box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5), -1px -1px 6px rgba(255, 255, 255, 0.05), -2px -2px 20px rgba(255, 255, 255, 0.1), 2px 2px 20px rgba(0, 0, 0, 0.8);
+            }
+
+            &:active {
+                box-shadow: inset -1px -1px 3px rgba(0, 0, 0, 0.8), inset -6px -6px 5px rgba(0, 0, 0, 0.3), inset 1px 1px 3px rgba(100, 100, 100, 0.15), inset 6px 6px 5px rgba(100, 100, 100, 0.06);
+            }
+        }
+
+        img {
+            position: relative;
+            width: 610px;
+            height: 790px;
+            margin-top: -100px;
+            margin-left: -100px;
+        }
+    }
+}

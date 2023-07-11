@@ -1,0 +1,73 @@
+.footer {
+    font-weight: 300;
+    margin-bottom: 70px;
+
+    .items {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0 30px;
+    }
+
+    .item {
+        border-top: 1px solid rgba(22, 22, 22, 0.08);
+
+        &:hover {
+            background-color: #212629;
+
+            a {
+                color: #fff;
+            }
+
+            svg {
+                fill: #fff;
+            }
+        }
+
+        a {
+            display: flex;
+            align-items: center;
+            gap: 21px;
+            padding: 20px 10px;
+            color: #212629;
+            
+            cursor: pointer;
+        }
+
+        &:last-child{
+            padding: 20px 10px;
+
+            &:hover{
+                background-color: transparent;
+            }
+        }
+
+        svg {
+            fill: #212629;
+            width: 20px;
+            height: 20px;
+            
+        }
+    }
+
+    .whatsapp {
+        &:hover {
+            background-color: #25D366;
+
+            a {
+                color: #fff;
+            }
+
+            svg {
+                fill: #fff;
+            }
+        }
+
+        a {
+            color: #25D366;
+        }
+
+        svg {
+            fill: #25D366;
+        }
+    }
+}

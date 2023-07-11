@@ -1,0 +1,24 @@
+.title {
+    margin-bottom: 35px;
+    font-size: 36px;
+    color: #212629;
+}
+
+.items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 30px;
+    margin-bottom: 150px;
+}
+
+.items .foodItem:nth-child(1n)>img {
+    background-color: #FE724B;
+}
+
+.items .foodItem:nth-child(2n)>img {
+    background-color: #B3E0EB;
+}
+
+.items .foodItem:nth-child(3n)>img {
+    background-color: #FCBEC8;
+}

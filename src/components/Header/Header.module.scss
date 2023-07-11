@@ -1,0 +1,71 @@
+.header {
+    padding: 40px 0;
+    margin-bottom: 30px;
+
+    .inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+
+
+        .buttons {
+            display: flex;
+            gap: 20px;
+
+            a {
+                border-radius: 30px;
+            }
+        }
+
+        .whatsapp {
+            padding: 10px 30px;
+            background: #25D366;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            &:hover {
+                background: #1feb6a;
+            }
+
+            svg {
+                width: 20px;
+                height: 20px;
+                fill: #fff;
+            }
+        }
+
+        .order {
+            padding: 10px 30px;
+            color: #212629;
+            background: #E9E9E9;
+            box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.08), -1px -1px 6px rgba(255, 255, 255, 0.5), -5px -5px 20px #FFFFFF, 5px 5px 20px #D3D3D3;
+        }
+
+        .user {
+            border: 0;
+            outline: none;
+            padding: 10px 14px;
+            background: #E9E9E9;
+            box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.08), -1px -1px 6px rgba(255, 255, 255, 0.5), -5px -5px 20px #FFFFFF, 5px 5px 20px #D3D3D3;
+            border-radius: 50%;
+
+            svg {
+                width: 16px;
+                height: 20px;
+            }
+        }
+
+        .order:hover,
+        .user:hover {
+            box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.08), -1px -1px 6px rgba(255, 255, 255, 0.5), -2px -2px 20px #FFFFFF, 2px 2px 20px #D3D3D3;
+        }
+
+        .order:active,
+        .user:active {
+            box-shadow: inset -1px -1px 3px rgba(255, 255, 255, 0.8), inset -6px -6px 5px rgba(255, 255, 255, 0.3), inset 1px 1px 3px rgba(0, 0, 0, 0.15), inset 6px 6px 5px rgba(0, 0, 0, 0.06);
+        }
+    }
+}

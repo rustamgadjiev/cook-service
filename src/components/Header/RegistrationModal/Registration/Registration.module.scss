@@ -1,0 +1,78 @@
+.content {
+    h2 {
+        color: #212629;
+        font-size: 40px;
+        line-height: 50px;
+        margin-top: 70px;
+    }
+
+    input {
+        background: #E9E9E9;
+        border: 1px solid #FFFFFF;
+        outline: none;
+        border-radius: 13px;
+        font-size: 24px;
+        line-height: 30px;
+        padding: 20px;
+        width: 100%;
+        margin-top: 10px;
+        color: #212629;
+    }
+
+    p {
+        font-weight: 300;
+        margin-top: 10px;
+        padding-right: 100px;
+    }
+
+    div label {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        padding-bottom: 20px;
+    }
+
+    div span {
+        color: red;
+        margin-top: 10px;
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+    }
+
+    div button {
+        background: #25D366;
+        border-radius: 99px;
+        width: 100%;
+        border: 0;
+        outline: none;
+        color: #fff;
+        padding: 10px 0;
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+
+        &:hover {
+            background: #1feb6a;
+        }
+
+        svg {
+            stroke: #fff;
+            transform: rotate(180deg);
+        }
+    }
+
+    .footer {
+        color: rgba(33, 38, 41, 0.5);
+        font-weight: 300;
+        font-size: 14px;
+        margin-top: 50px;
+
+        a {
+            color: rgb(33, 38, 41);
+        }
+    }
+}

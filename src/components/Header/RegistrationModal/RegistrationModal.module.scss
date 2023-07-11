@@ -1,0 +1,85 @@
+.overlay {
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #e9e9e985;
+    backdrop-filter: blur(10px);
+}
+
+.modal {
+    background: #E9E9E9;
+    box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.05), 60px 60px 80px rgba(0, 0, 0, 0.35);
+    border-radius: 40px 40px 40px 5px;
+    padding: 20px 20px 20px 20px;
+    max-width: 375px;
+    width: 100%;
+    height: 520px;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    z-index: 11;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+        background-color: transparent;
+        width: 0;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #333;
+    }
+
+    .header {
+        position: sticky;
+        z-index: 12;
+        top: 0;
+    }
+
+    .back {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        left: 0;
+
+        svg {
+            stroke: #212629;
+        }
+    }
+
+    .close {
+        position: absolute;
+        right: 0;
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+        border: 0;
+        outline: none;
+        border-radius: 50%;
+        background: #212629;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+            stroke: #E9E9E9;
+            fill: #212629;
+        }
+    }
+
+    @media (max-height: 551px) {
+        height: 450px;
+    }
+
+    @media (max-height: 485px) {
+        height: 385px;
+    }
+
+    @media (max-height: 404px) {
+        height: 304px;
+    }
+}

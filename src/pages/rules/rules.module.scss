@@ -1,0 +1,35 @@
+.rules {
+    font-weight: 300;
+    font-size: 17px;
+    padding-bottom: 100px;
+    color: rgba(33, 38, 41, 0.5);
+
+    h1 {
+        font-size: 40px;
+        line-height: 49px;
+        color: #212629;
+        position: relative;
+        margin-bottom: 46px;
+        cursor: pointer;
+
+        svg {
+            position: absolute;
+            top: 50%;
+            left: -40px;
+            transform: translateY(-50%);
+        }
+    }
+
+    h3{
+        font-size: 20px;
+        line-height: 24px;
+        margin-bottom: 30px;
+        color: #212629;
+    }
+    h3:not(:first-child) {
+        margin-top: 70px;
+    }
+    ul > li:not(:last-child) {
+        margin-bottom: 20px;
+    }
+}
