@@ -49,9 +49,7 @@ export const Header = () => {
               </Button>
             </div>
             {isViewUserMenu && (
-              <Portal>
-                <UserMenu setIsViewUserMenu={setIsViewUserMenu} />
-              </Portal>
+              <UserMenu setIsViewUserMenu={setIsViewUserMenu} />
             )}
           </div>
         </div>
