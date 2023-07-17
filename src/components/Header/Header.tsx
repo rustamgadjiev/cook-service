@@ -9,6 +9,7 @@ import Link from "next/link";
 import { useAppSelector } from "@/store/store";
 import { selectIsLoggedIn } from "@/store/slices/registration/registration";
 import { Button } from "../UI/Button/Button";
+import { Portal } from "../Portal";
 
 export const Header = () => {
   const [isViewModal, setIsViewModal] = useState<boolean>(false);
@@ -48,11 +49,17 @@ export const Header = () => {
               </Button>
             </div>
             {isViewUserMenu && (
-              <UserMenu setIsViewUserMenu={setIsViewUserMenu} />
+              <Portal>
+                <UserMenu setIsViewUserMenu={setIsViewUserMenu} />
+              </Portal>
             )}
           </div>
         </div>
-        {isViewModal && <RegistrationModal setIsViewModal={setIsViewModal} />}
+        {isViewModal && (
+          <Portal>
+            <RegistrationModal setIsViewModal={setIsViewModal} />
+          </Portal>
+        )}
       </header>
     </>
   );

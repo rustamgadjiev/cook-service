@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Modal } from "./Modal/Modal";
 import { TFoods } from "../../../store/slices/foods/types";
 import { Content } from "./Content/Content";
+import { Portal } from "@/components/Portal";
 
 export const FoodItem = ({
   title,
@@ -34,7 +35,11 @@ export const FoodItem = ({
 
   return (
     <div className={s.item}>
-      {isViewModal && <Modal setIsViewModal={setIsViewModal} />}
+      {isViewModal && (
+        <Portal>
+          <Modal setIsViewModal={setIsViewModal} />
+        </Portal>
+      )}
       <div className={s.img}>
         <img width={292} height={292} src={imageUrl} alt="food" />
       </div>
