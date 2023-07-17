@@ -1,7 +1,12 @@
 // import { ReactComponent as ArrowIcon } from "../../../../../assets/images/icons/arrow.svg";
 import ArrowIcon from "@/assets/images/icons/arrow.svg";
 import { useSelector, useDispatch } from "react-redux";
-import { selectPhone, setContentId, setWarningText } from "../../../../../store/slices/registration/registration";
+import {
+  selectPhone,
+  setContentId,
+  setWarningText,
+} from "../../../../../store/slices/registration/registration";
+import { Button } from "@/components/UI/Button/Button";
 
 export const NextBtn = () => {
   const phone = useSelector(selectPhone);
@@ -17,9 +22,9 @@ export const NextBtn = () => {
     }
   };
   return (
-    <button onClick={nextBtnClick}>
+    <Button onClick={nextBtnClick}>
       Далее
       <ArrowIcon />
-    </button>
+    </Button>
   );
 };

@@ -1,6 +1,6 @@
 import { Slider } from "@/components/Slider/Slider";
-import { Filter } from "@/components/Filter/Filter";
 import { FoodItems } from "@/components/FoodItems/FoodItems";
+import { Filter } from "@/components/Filter/Filter";
 
 export default function Home() {
   return (

@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import InputMask from "react-input-mask";
-import { setContentId, setLoggedIn } from "../../../../../store/slices/registration/registration";
+import {
+  setContentId,
+  setLoggedIn,
+} from "../../../../../store/slices/registration/registration";
 import { useAppDispatch } from "@/store/store";
 
 type TProps = {

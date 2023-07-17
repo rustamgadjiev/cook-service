@@ -1,0 +1,48 @@
+.count {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 99px;
+    padding: 10px 20px;
+    color: #212629;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+
+    span {
+        overflow: hidden;
+        width: 23px;
+        text-align: center;
+        color: #fff;
+    }
+
+    button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+
+
+        span {
+            width: 14px;
+            height: 1px;
+            display: inline-block;
+            position: absolute;
+            background-color: #fff;
+        }
+
+        &:last-child span:last-child {
+            height: 14px;
+            width: 1px;
+        }
+
+        &.disable {
+            cursor: default;
+
+            span {
+                background: #ffffff88;
+            }
+        }
+    }
+}

@@ -13,9 +13,5 @@ export type TFoods = {
 };
 
 export type TInitialState = {
-  data: TFoods[];
-  favouriteData: TFoods[];
-  isLoading: boolean;
-  error: string;
   selectedItem: TFoods | {};
 };

@@ -1,0 +1,46 @@
+.content {
+    padding: 20px;
+    cursor: pointer;
+
+    .title {
+        line-height: 24px;
+        color: #212629;
+        margin-bottom: 10px;
+
+    }
+
+    .info {
+        font-weight: 300;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        color: rgba(33, 38, 41, 0.5);
+        margin-bottom: 20px;
+
+        .price {
+            font-weight: 700;
+        }
+
+        span {
+            position: relative;
+
+            &:not(:last-child):before {
+                content: '·';
+                color: rgba(33, 38, 41, 0.2);
+                font-size: 30px;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: -12px;
+            }
+        }
+    }
+
+    .description {
+        color: rgba(33, 38, 41, 0.6);
+        font-weight: 300;
+        font-size: 17px;
+        margin-bottom: 30px;
+    }
+}

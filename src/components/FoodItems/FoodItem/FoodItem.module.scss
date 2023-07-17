@@ -10,48 +10,23 @@
         box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.05), 40px 40px 50px rgba(0, 0, 0, 0.5);
         background: #212629;
 
-        .title {
-            color: #fff;
-        }
-
-        .info {
-            color: rgba(255, 255, 255, 0.5);
-
-            span {
-                &:not(:last-child):before {
-                    color: rgba(255, 255, 255, 0.5);
-                }
+        div:last-child {
+            h3 {
+                color: #fff;
             }
-        }
-
-        .description {
-            color: rgba(255, 255, 255, 0.6);
-        }
-
-        .bottom {
-            .count {
-                border: 1px solid rgba(255, 255, 255, 0.08);
-
+    
+            div {
+                color: rgba(255, 255, 255, 0.5);
+    
                 span {
-                    color: #fff;
-                }
-
-                button {
-                    span {
-                        background-color: #fff;
-                    }
-
-                    &.disable {
-                        span {
-                            background: #ffffff88;
-                        }
+                    &:not(:last-child):before {
+                        color: rgba(255, 255, 255, 0.5);
                     }
                 }
             }
-
-            .btn {
-                background: #212629;
-                box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5), -1px -1px 6px rgba(255, 255, 255, 0.05), -5px -5px 20px rgba(255, 255, 255, 0.1), 5px 5px 20px rgba(0, 0, 0, 0.8);
+    
+            p {
+                color: rgba(255, 255, 255, 0.6);
             }
         }
     }
@@ -80,62 +55,5 @@
         img {
             background-color: #fff !important;
         }
-    }
-
-    .heart {
-        position: absolute;
-        top: 23px;
-        left: 23px;
-
-        svg {
-            fill: #fff;
-        }
-    }
-
-    .content {
-        padding: 20px;
-        cursor: pointer;
-    }
-
-    .title {
-        line-height: 24px;
-        color: #212629;
-        margin-bottom: 10px;
-
-    }
-
-    .info {
-        font-weight: 300;
-        font-size: 18px;
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        color: rgba(33, 38, 41, 0.5);
-        margin-bottom: 20px;
-
-        .price {
-            font-weight: 700;
-        }
-
-        span {
-            position: relative;
-
-            &:not(:last-child):before {
-                content: '·';
-                color: rgba(33, 38, 41, 0.2);
-                font-size: 30px;
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                right: -12px;
-            }
-        }
-    }
-
-    .description {
-        color: rgba(33, 38, 41, 0.6);
-        font-weight: 300;
-        font-size: 17px;
-        margin-bottom: 30px;
     }
 }

@@ -6,9 +6,8 @@ const initialState = {
   contentId: 0,
   warningText: "",
   isLoggedIn:
-    typeof window !== "undefined"
-      ? localStorage.getItem("isLoggedIn") === "true"
-      : false,
+    typeof window !== "undefined" &&
+    localStorage.getItem("isLoggedIn") === "true",
 };
 
 const registrationSlice = createSlice({

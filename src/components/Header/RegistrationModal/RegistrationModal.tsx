@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Registration } from "./Registration/Registration";
 import s from "./RegistrationModal.module.scss";
 import ArrowIcon from "../../../assets/images/icons/arrow.svg";
@@ -10,7 +10,7 @@ import {
   selectContentId,
   setContentId,
 } from "@/store/slices/registration/registration";
-import Image from "next/image";
+import { Button } from "@/components/UI/Button/Button";
 
 type Props = {
   setIsViewModal: React.Dispatch<React.SetStateAction<boolean>>;
@@ -27,16 +27,16 @@ export const RegistrationModal = ({ setIsViewModal }: Props) => {
       <div className={s.modal}>
         <header className={s.header}>
           {contentId !== 0 && (
-            <button
+            <Button
               className={s.back}
               onClick={() => dispatch(setContentId(contentId - 1))}
             >
               <ArrowIcon />
-            </button>
+            </Button>
           )}
-          <button className={s.close} onClick={() => setIsViewModal(false)}>
+          <Button className={s.close} onClick={() => setIsViewModal(false)}>
             <CloseIcon />
-          </button>
+          </Button>
         </header>
         {contentId === 0 ? (
           <Registration setIsViewModal={setIsViewModal} />

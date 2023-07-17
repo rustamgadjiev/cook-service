@@ -8,6 +8,7 @@ import { UserMenu } from "./UserMenu/UserMenu";
 import Link from "next/link";
 import { useAppSelector } from "@/store/store";
 import { selectIsLoggedIn } from "@/store/slices/registration/registration";
+import { Button } from "../UI/Button/Button";
 
 export const Header = () => {
   const [isViewModal, setIsViewModal] = useState<boolean>(false);
@@ -35,16 +36,16 @@ export const Header = () => {
               <LogoIcon />
             </Link>
             <div className={s.buttons}>
-              <a href="#" className={s.whatsapp}>
+              <Link href="#" className={s.whatsapp}>
                 <WhatsAppIcon />
                 WhatsApp
-              </a>
-              <a href="#" className={s.order}>
+              </Link>
+              <Link href="#" className={s.order}>
                 Заказать 1 блюдо за 430₽
-              </a>
-              <button onClick={onClockLogIn} className={s.user}>
+              </Link>
+              <Button onClick={onClockLogIn} className={`${s.user} white-btn`}>
                 <UserIcon />
-              </button>
+              </Button>
             </div>
             {isViewUserMenu && (
               <UserMenu setIsViewUserMenu={setIsViewUserMenu} />

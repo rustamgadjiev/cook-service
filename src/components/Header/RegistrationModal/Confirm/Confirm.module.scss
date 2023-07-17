@@ -6,36 +6,8 @@
         margin-top: 70px;
     }
 
-    input {
-        background: #E9E9E9;
-        border: 1px solid #FFFFFF;
-        outline: none;
-        border-radius: 13px;
-        font-size: 24px;
-        line-height: 30px;
-        padding: 20px;
-        width: 100%;
-        margin-top: 10px;
-        color: #212629;
-    }
-
     button {
-        padding: 10px 0;
         width: 100%;
-        border: 0;
-        outline: none;
-        box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.08), -1px -1px 6px rgba(255, 255, 255, 0.5), -5px -5px 20px #FFFFFF, 5px 5px 20px #D3D3D3;
-        border-radius: 30px;
-        cursor: pointer;
-        color: #212629;
         margin-top: 30px;
-
-        &:hover {
-            box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.08), -1px -1px 6px rgba(255, 255, 255, 0.5), -2px -2px 20px #FFFFFF, 2px 2px 20px #D3D3D3;
-        }
-
-        &:active {
-            box-shadow: inset -1px -1px 3px rgba(255, 255, 255, 0.8), inset -6px -6px 5px rgba(255, 255, 255, 0.3), inset 1px 1px 3px rgba(0, 0, 0, 0.15), inset 6px 6px 5px rgba(0, 0, 0, 0.06);
-        }
     }
 }

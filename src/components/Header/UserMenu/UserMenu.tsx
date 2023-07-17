@@ -24,8 +24,9 @@ export const UserMenu = ({ setIsViewUserMenu }: TProps) => {
     if (i === 5) {
       dispatch(setLoggedIn(false));
       dispatch(removeFavouriteData());
-      setIsViewUserMenu(false);
     }
+
+    setIsViewUserMenu(false);
   };
 
   return (

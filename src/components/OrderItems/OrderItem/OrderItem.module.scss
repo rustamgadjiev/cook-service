@@ -1,0 +1,39 @@
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px 20px 40px;
+    border-radius: 40px 40px 40px 5px;
+    background: rgba(255, 255, 255, 0.40);
+
+    div {
+        &:first-child {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            h4{
+                font-size: 20px;
+            }
+            p {
+                color: #21262980;
+                font-size: 17px;
+                font-weight: 300;
+            }
+        }
+        &:last-child {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            font-size: 14px;
+            font-weight: 300;
+
+            span {
+                display: inline-block;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+            }
+        }
+    }
+}

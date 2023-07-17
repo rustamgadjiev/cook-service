@@ -1,9 +1,11 @@
+import { Button } from "@/components/UI/Button/Button";
 import {
   selectPhone,
   setContentId,
 } from "../../../../store/slices/registration/registration";
 import s from "./Confirm.module.scss";
 import { useSelector, useDispatch } from "react-redux";
+import { Input } from "@/components/UI/Input/Input";
 
 export const Confirm = () => {
   const phone = useSelector(selectPhone);
@@ -13,7 +15,6 @@ export const Confirm = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    localStorage.setItem("isLoggedIn", "true");
     dispatch(setContentId(2));
 
     // fetch("https://6481fbdb29fa1c5c50326b3a.mockapi.io/users")
@@ -50,8 +51,10 @@ export const Confirm = () => {
     <div className={s.content}>
       <h2>Ваш телефон</h2>
       <form onSubmit={handleSubmit}>
-        <input type="tel" disabled value={phone} />
-        <button type="submit">Подтвердить по СМС</button>
+        <Input type="tel" disabled value={phone} />
+        <Button className="white-btn" type="submit">
+          Подтвердить по СМС
+        </Button>
       </form>
     </div>
   );
