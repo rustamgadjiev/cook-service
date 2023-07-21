@@ -1,0 +1,45 @@
+.item {
+    border-radius: 40px 40px 40px 5px;
+    background: var(--text, #212629);
+    box-shadow: 40px 40px 50px 0px rgba(0, 0, 0, 0.50), 2px 2px 30px 0px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+    color: #fff;
+    max-width: 460px;
+    width: 100%;
+
+    .content {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+    }
+
+    svg {
+        fill: var(--white, #FFF);
+        width: 40px;
+    }
+
+    p{
+        margin-bottom: 0px;
+
+        &:first-child {
+            font-size: 20px;
+            font-weight: 700;
+        }
+        &:last-child {
+            font-size: 16px;
+            font-weight: 300;
+            max-width: 275px;
+        }
+    }
+    h3 {
+        font-size: 80px;
+        line-height: normal;
+    }
+
+    button {
+        margin-bottom: 0;
+        width: 100%;
+        justify-content: center;
+        margin-top: 40px;
+    }
+}

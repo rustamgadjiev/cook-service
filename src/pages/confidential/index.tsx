@@ -14,10 +14,10 @@ export default function Confidential() {
           Политика конфиденциальности
         </h1>
         {confidentialInfo.map((item) => (
-          <>
+          <div key={item.title}>
             <h3>{item.title}</h3>
             <p>{item.description}</p>
-          </>
+          </div>
         ))}
       </div>
     </div>

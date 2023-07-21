@@ -14,7 +14,6 @@ type TProps = {
 
 export const FilterButton = ({ item, i, active }: TProps) => {
   const selectedFilterId = useAppSelector(selectFilter);
-  const isLoggedIn = useAppSelector(selectIsLoggedIn);
 
   const dispatch = useAppDispatch();
 

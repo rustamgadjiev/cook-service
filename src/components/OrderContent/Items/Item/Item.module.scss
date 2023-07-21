@@ -1,0 +1,30 @@
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &>div {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        max-width: 450px;
+        width: 100%;
+    }
+
+    img {
+        width: 60px;
+        background-color: #B3E0EB;
+        border-radius: 6px;
+    }
+
+    h2 {
+        font-size: 30px;
+        line-height: normal;
+    }
+
+    span {
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 20px;
+    }
+}

@@ -9,6 +9,8 @@
     background: #E9E9E9;
     box-shadow: 60px 60px 80px 0px rgba(0, 0, 0, 0.35), 2px 2px 30px 0px rgba(0, 0, 0, 0.05);
     padding: 70px 20px 20px 20px;
+    overflow: hidden;
+    transition-duration: .3s;
 
     .close {
         position: absolute;
@@ -39,6 +41,7 @@
 
         svg {
             fill: #212629;
+            width: 20px;
         }
 
         &:hover {

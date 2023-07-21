@@ -4,18 +4,21 @@ import {
   setContentId,
 } from "../../../../store/slices/registration/registration";
 import s from "./Confirm.module.scss";
-import { useSelector, useDispatch } from "react-redux";
 import { Input } from "@/components/UI/Input/Input";
+import { useAppDispatch, useAppSelector } from "@/store/store";
+import { editData } from "@/store/slices/userData/userData";
 
 export const Confirm = () => {
-  const phone = useSelector(selectPhone);
+  const phone = useAppSelector(selectPhone);
 
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     dispatch(setContentId(2));
+    dispatch(editData({ tel: phone }));
+    
 
     // fetch("https://6481fbdb29fa1c5c50326b3a.mockapi.io/users")
     //   .then((resp) => resp.json())

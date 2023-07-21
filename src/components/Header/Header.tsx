@@ -10,6 +10,11 @@ import { useAppSelector } from "@/store/store";
 import { selectIsLoggedIn } from "@/store/slices/registration/registration";
 import { Button } from "../UI/Button/Button";
 import { Portal } from "../Portal";
+import dynamic from "next/dynamic";
+
+const CartBtn = dynamic(() => import("./CartBtn/CartBtn"), {
+  ssr: false,
+});
 
 export const Header = () => {
   const [isViewModal, setIsViewModal] = useState<boolean>(false);
@@ -41,9 +46,7 @@ export const Header = () => {
                 <WhatsAppIcon />
                 WhatsApp
               </Link>
-              <Link href="#" className={s.order}>
-                Заказать 1 блюдо за 430₽
-              </Link>
+              <CartBtn />
               <Button onClick={onClockLogIn} className={`${s.user} white-btn`}>
                 <UserIcon />
               </Button>

@@ -5,7 +5,7 @@ import { useAppSelector } from "../../store/store";
 import { Loading } from "../UI/Loading/Loading";
 import { FoodItem } from "./FoodItem/FoodItem";
 import { useQuery } from "react-query";
-import { getData } from "@/framework/utils/http";
+import { getData } from "@/store/api/api";
 
 export const FoodItems = () => {
   const selectedFilterId = useAppSelector(selectFilter);

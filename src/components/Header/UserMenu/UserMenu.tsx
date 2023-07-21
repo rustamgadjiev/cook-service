@@ -9,7 +9,6 @@ import CloseIcon from "@/assets/images/icons/close.svg";
 import s from "./UserMenu.module.scss";
 import { Dispatch, SetStateAction } from "react";
 import { useAppDispatch } from "../../../store/store";
-import { removeFavouriteData } from "../../../store/slices/foods/foods";
 import Link from "next/link";
 import { setLoggedIn } from "@/store/slices/registration/registration";
 
@@ -23,7 +22,6 @@ export const UserMenu = ({ setIsViewUserMenu }: TProps) => {
   const handleMenuClick = (i: number) => {
     if (i === 5) {
       dispatch(setLoggedIn(false));
-      dispatch(removeFavouriteData());
     }
 
     setIsViewUserMenu(false);

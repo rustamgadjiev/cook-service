@@ -1,0 +1,19 @@
+.buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+
+    button:first-child {
+        padding-left: 134px;
+        padding-right: 134px;
+    }
+
+    span {
+        cursor: pointer;
+
+        &:hover {
+            color: red;
+        }
+    }
+}

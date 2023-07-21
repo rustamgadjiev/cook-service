@@ -1,29 +1,48 @@
 import s from "./OrderItem.module.scss";
+import OnGoingIcon from "@/assets/images/icons/ongoing.svg";
+import CancelIcon from "@/assets/images/icons/cancel.svg";
+import DeliveredIcon from "@/assets/images/icons/delivered.svg";
+import Link from "next/link";
 
 type TProps = {
   condition: number;
+  id: number;
+  date: string;
+  price: number;
 };
 
-export const OrderItem = ({ condition }: TProps) => {
+export const OrderItem = ({ condition, date, price, id }: TProps) => {
   const conditionStyle = {
     background:
-      condition === 2 ? "#FED149" : condition === 0 ? "#EE7722" : "#96C86E",
+      condition === 1 ? "#FED149" : condition === 3 ? "#EE7722" : "#96C86E",
   };
 
   return (
-    <div className={s.item}>
+    <Link href={`/orders/${id}`} className={s.item}>
       <div>
-        <h4>8 апреля 2054</h4>
-        <p>№298456548 на 4 250₽</p>
+        <h4>{date}</h4>
+        <p>
+          №{id} на {price}₽
+        </p>
       </div>
       <div>
-        {condition === 2
+        {condition === 1
           ? "Текущий"
-          : condition === 0
+          : condition === 3
           ? "Отменен"
           : "Доставлен"}
-        <span style={conditionStyle}></span>
+        {
+          <span style={conditionStyle}>
+            {condition === 1 ? (
+              <OnGoingIcon />
+            ) : condition === 3 ? (
+              <CancelIcon />
+            ) : (
+              <DeliveredIcon />
+            )}
+          </span>
+        }
       </div>
-    </div>
+    </Link>
   );
 };

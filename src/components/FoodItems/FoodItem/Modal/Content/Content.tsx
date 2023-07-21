@@ -22,6 +22,7 @@ export const Content = () => {
           <h4>Дополнительно:</h4>
           {selectedFoodItem.more.map((item, i) => (
             <MoreItem
+              key={i}
               title={item.title}
               addPrice={item.addPrice}
               id={i}

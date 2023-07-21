@@ -5,6 +5,8 @@ type TProps = {
   value: string;
   checked: boolean;
   disabled: boolean;
+  placeholder: string;
+  maxLength: number;
 };
 
 export const Input = ({
@@ -13,7 +15,9 @@ export const Input = ({
   onChange,
   value,
   checked,
-  disabled
+  disabled,
+  placeholder,
+  maxLength
 }: TProps) => {
   return (
     <input
@@ -23,6 +27,8 @@ export const Input = ({
       value={value}
       checked={checked}
       disabled={disabled}
+      placeholder={placeholder}
+      maxLength={maxLength}
     />
   );
 };
@@ -34,4 +40,6 @@ Input.defaultProps = {
   value: "",
   onChange: () => {},
   disabled: false,
+  placeholder: "",
+  maxLength: 50,
 };

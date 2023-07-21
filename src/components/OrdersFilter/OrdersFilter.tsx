@@ -1,9 +1,16 @@
 import { ordersFilterList } from "@/utils/app-data";
 import s from "./OrdersFilter.module.scss";
-import { useState } from "react";
+import { useAppDispatch, useAppSelector } from "@/store/store";
+import {
+  selectOrderFilterId,
+  setSelectedOrderFilterId,
+} from "@/store/slices/orders/orders";
+import { Button } from "../UI/Button/Button";
 
 export const OrdersFilter = () => {
-  const [selectedOrderFilterId, setSelectedOrderFilterId] = useState<number>(0);
+  const selectedOrderFilterId = useAppSelector(selectOrderFilterId);
+
+  const dispatch = useAppDispatch();
 
   return (
     <div className={s.filter}>
@@ -11,13 +18,15 @@ export const OrdersFilter = () => {
         <div className={s.wrapper}>
           {ordersFilterList.map((item, i) => {
             return (
-              <button
+              <Button
                 key={item}
-                className={selectedOrderFilterId === i ? s.active : ""}
-                onClick={() => setSelectedOrderFilterId(i)}
+                className={
+                  selectedOrderFilterId === i ? "active white-btn" : "white-btn"
+                }
+                onClick={() => dispatch(setSelectedOrderFilterId(i))}
               >
                 {item}
-              </button>
+              </Button>
             );
           })}
         </div>

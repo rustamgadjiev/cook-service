@@ -13,15 +13,15 @@ export default function Rules() {
           <ArrowIcon />
           Пользовательское соглашение
         </h1>
-        {rulesInfo.map((item) => (
-          <>
+        {rulesInfo.map((item, i) => (
+          <div key={i}>
             <h3>{item.title}</h3>
             <ul>
-              {item.descriptions.map((description) => (
-                <li>{description}</li>
+              {item.descriptions.map((description, i) => (
+                <li key={i}>{description}</li>
               ))}
             </ul>
-          </>
+          </div>
         ))}
       </div>
     </div>

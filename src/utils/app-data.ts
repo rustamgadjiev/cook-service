@@ -8,6 +8,10 @@ import OrderIcon from "@/assets/images/icons/order.svg";
 import AgreementIcon from "@/assets/images/icons/agreement.svg";
 import steak from "@/assets/images/steak.png";
 import food from "@/assets/images/food.png";
+import OnGoingIcon from "@/assets/images/icons/ongoing.svg";
+import DeliveredIcon from "@/assets/images/icons/delivered.svg";
+import CompletedIcon from "@/assets/images/icons/condition-completed.svg";
+import CookIcon from "@/assets/images/icons/cook.svg";
 
 type TUserMenuList = { title: string; link: string };
 
@@ -21,14 +25,19 @@ export const filterList: string[] = [
   "Напитки",
 ];
 
-export const ordersFilterList: string[] = ["Все", "Доставлены", "Отменены"];
+export const ordersFilterList: string[] = [
+  "Все",
+  "Текущие",
+  "Доставлены",
+  "Отменены",
+];
 
 export const userMenuList: TUserMenuList[] = [
   { title: "Мои заказы", link: "/orders" },
-  { title: "Депозит", link: "/" },
-  { title: "Привязанные карты", link: "/" },
-  { title: "Мои адреса", link: "/" },
-  { title: "Мои данные", link: "/" },
+  { title: "Депозит", link: "/deposit" },
+  { title: "Привязанные карты", link: "/cards" },
+  { title: "Мои адреса", link: "/address" },
+  { title: "Мои данные", link: "/my-data" },
   { title: "Выйти", link: "/" },
 ];
 
@@ -106,4 +115,11 @@ export const confidentialInfo = [
     Вы используете (например, от рекламодателей Яндекса или служб такси)
     из других источников с общедоступными`,
   },
+];
+
+export const conditionList = [
+  { title: "Оформлен", icon: OnGoingIcon, id: 0 },
+  { title: "Готовиться", icon: CookIcon, id: 1 },
+  { title: "В доставке", icon: DeliveredIcon, id: 2 },
+  { title: "Готово", icon: CompletedIcon, id: 3 },
 ];
