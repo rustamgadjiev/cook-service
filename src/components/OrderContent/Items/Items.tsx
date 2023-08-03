@@ -11,6 +11,7 @@ type TProps = {
         imageUrl: string;
         id: string;
         count: number;
+        mores: any;
       }[]
     | undefined;
   totalPrice?: number;
