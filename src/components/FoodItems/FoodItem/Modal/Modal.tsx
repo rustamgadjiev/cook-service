@@ -1,11 +1,14 @@
 import s from "./Modal.module.scss";
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import CloseIcon from "@/assets/images/icons/close.svg";
 import { selectFoodItem } from "@/store/slices/foods/foods";
 import { useSelector } from "react-redux";
-import { useAppDispatch } from "@/store/store";
 import { Content } from "./Content/Content";
-import { Bottom } from "./Bottom/Bottom";
+import dynamic from "next/dynamic";
+
+const Bottom = dynamic(() => import("./Bottom/Bottom"), {
+  ssr: false,
+});
 
 type TProps = {
   setIsViewModal: Dispatch<SetStateAction<boolean>>;
@@ -13,8 +16,7 @@ type TProps = {
 
 export const Modal = ({ setIsViewModal }: TProps) => {
   const selectedFoodItem = useSelector(selectFoodItem);
-
-  const dispatch = useAppDispatch();
+  const [mores, setMores] = useState<string[]>([]);
 
   return (
     <>
@@ -24,8 +26,8 @@ export const Modal = ({ setIsViewModal }: TProps) => {
         <div className={`${s.image} ${s.container}`}>
           <img src={selectedFoodItem.imageUrl} alt="" />
         </div>
-        <Content />
-        <Bottom />
+        <Content setMores={setMores} />
+        <Bottom setIsViewModal={setIsViewModal} mores={mores} />
       </div>
     </>
   );

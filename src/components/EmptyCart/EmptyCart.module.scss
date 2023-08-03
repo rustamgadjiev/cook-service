@@ -1,0 +1,19 @@
+.cart {
+    text-align: center;
+
+    h2 {
+        font-size: 3.5em;
+        margin-top: 100px;
+        position: relative;
+        z-index: 1;
+    }
+    img {
+        width: 350px;
+        margin: 0 auto;
+    }
+    .btn {
+        padding-left: 50px;
+        padding-right: 50px;
+        margin-top: 30px;
+    }
+}

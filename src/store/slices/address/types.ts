@@ -10,4 +10,5 @@ export type TAddressList = {
 
 export type TInitialState = {
   addressList: TAddressList[];
+  selectedAddressId: number;
 };

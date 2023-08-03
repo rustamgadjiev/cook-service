@@ -1,14 +1,25 @@
 import { OrdersFilter } from "@/components/OrdersFilter/OrdersFilter";
-import { OrderItems } from "@/components/OrderItems/OrderItems";
 import { Title } from "@/components/UI/Title/Title";
+import { TITLE } from "@/utils/constants";
+import dynamic from "next/dynamic";
+import Head from "next/head";
+
+const OrderItems = dynamic(() => import("@/components/OrderItems/OrderItems"), {
+  ssr: false,
+});
 
 const Orders = () => {
   return (
-    <div className="container">
-      <Title>Мои заказы</Title>
-      <OrdersFilter />
-      <OrderItems />
-    </div>
+    <>
+      <Head>
+        <title>{`${TITLE} | Заказы`}</title>
+      </Head>
+      <div className="container">
+        <Title>Мои заказы</Title>
+        <OrdersFilter />
+        <OrderItems />
+      </div>
+    </>
   );
 };
 

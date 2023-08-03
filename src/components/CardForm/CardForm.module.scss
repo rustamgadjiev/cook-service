@@ -20,6 +20,10 @@
         position: relative;
         padding-top: 20px;
 
+        input:focus {
+            border-color: #333;
+        }
+
         span {
             position: absolute;
             left: 0;

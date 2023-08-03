@@ -1,149 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { TInitialState, TOrderList } from "./types";
+import { paymentList, timeList } from "@/utils/app-data";
 
 const initialState: TInitialState = {
-  orderList: [
-    {
-      id: 0,
-      date: "8 апреля 2054",
-      price: 4250,
-      condition: 1,
-      foods: [
-        {
-          imageUrl:
-            "https://dodopizza-a.akamaihd.net/static/Img/Products/b33f34589fa74a3788f3981848084cf2_292x292.webp",
-          price: 199 * 5,
-          title: "Супермясной Додстер",
-          id: "0",
-          count: 5,
-        },
-        {
-          imageUrl:
-            "https://dodopizza-a.akamaihd.net/static/Img/Products/87b6d4ca8df7430497de8ceaac09203e_292x292.webp",
-          price: 219 * 2,
-          title: "Дэнвич чоризо барбекю",
-          id: "1",
-          count: 2,
-        },
-      ],
-    },
-    {
-      id: 1,
-      date: "9 апреля 2054",
-      price: 5150,
-      condition: 3,
-      foods: [
-        {
-          imageUrl:
-            "https://dodopizza-a.akamaihd.net/static/Img/Products/b33f34589fa74a3788f3981848084cf2_292x292.webp",
-          price: 199,
-          title: "Супермясной Додстер",
-          id: "0",
-          count: 1,
-        },
-      ],
-    },
-    {
-      id: 2,
-      date: "12 апреля 2054",
-      price: 6000,
-      condition: 2,
-      foods: [
-        {
-          imageUrl:
-            "https://dodopizza-a.akamaihd.net/static/Img/Products/b33f34589fa74a3788f3981848084cf2_292x292.webp",
-          price: 199,
-          title: "Супермясной Додстер",
-          id: "0",
-          count: 1,
-        },
-      ],
-    },
-    {
-      id: 3,
-      date: "18 июля 2023",
-      price: 23500,
-      condition: 1,
-      foods: [
-        {
-          imageUrl:
-            "https://dodopizza-a.akamaihd.net/static/Img/Products/b33f34589fa74a3788f3981848084cf2_292x292.webp",
-          price: 199,
-          title: "Супермясной Додстер",
-          id: "0",
-          count: 1,
-        },
-      ],
-    },
-  ],
-  filterOrderList: [
-    {
-      id: 0,
-      date: "8 апреля 2054",
-      price: 4250,
-      condition: 1,
-      foods: [
-        {
-          imageUrl:
-            "https://dodopizza-a.akamaihd.net/static/Img/Products/b33f34589fa74a3788f3981848084cf2_292x292.webp",
-          price: 199,
-          title: "Супермясной Додстер",
-          id: "0",
-          count: 1,
-        },
-      ],
-    },
-    {
-      id: 1,
-      date: "9 апреля 2054",
-      price: 5150,
-      condition: 3,
-      foods: [
-        {
-          imageUrl:
-            "https://dodopizza-a.akamaihd.net/static/Img/Products/b33f34589fa74a3788f3981848084cf2_292x292.webp",
-          price: 199,
-          title: "Супермясной Додстер",
-          id: "0",
-          count: 1,
-        },
-      ],
-    },
-    {
-      id: 2,
-      date: "12 апреля 2054",
-      price: 6000,
-      condition: 2,
-      foods: [
-        {
-          imageUrl:
-            "https://dodopizza-a.akamaihd.net/static/Img/Products/b33f34589fa74a3788f3981848084cf2_292x292.webp",
-          price: 199,
-          title: "Супермясной Додстер",
-          id: "0",
-          count: 1,
-        },
-      ],
-    },
-    {
-      id: 3,
-      date: "18 июля 2023",
-      price: 23500,
-      condition: 1,
-      foods: [
-        {
-          imageUrl:
-            "https://dodopizza-a.akamaihd.net/static/Img/Products/b33f34589fa74a3788f3981848084cf2_292x292.webp",
-          price: 199,
-          title: "Супермясной Додстер",
-          id: "0",
-          count: 1,
-        },
-      ],
-    },
-  ],
+  orderList:
+    typeof window !== "undefined"
+      ? JSON.parse(localStorage.getItem("orderList") || "[]")
+      : [],
+  filterOrderList:
+    typeof window !== "undefined"
+      ? JSON.parse(localStorage.getItem("orderList") || "[]")
+      : [],
   selectedOrderFilterId: 0,
   totalPrice: 0,
+  selectedTimeId: timeList[0],
+  selectedPaymentId: paymentList[0].title as string,
 };
 
 const orderSlice = createSlice({
@@ -161,11 +32,43 @@ const orderSlice = createSlice({
         state.filterOrderList = state.orderList;
       }
     },
+    setSelectedTimeId(state, { payload }) {
+      state.selectedTimeId = payload;
+    },
+    setSelectedPaymentId(state, { payload }) {
+      state.selectedPaymentId = payload;
+    },
+    addOrder(state, { payload }) {
+      state.orderList.push(payload);
+      state.filterOrderList.push(payload);
+      localStorage.setItem("orderList", JSON.stringify(state.orderList));
+    },
+    deleteOrders(state) {
+      state.orderList = [];
+      state.filterOrderList = [];
+      localStorage.removeItem("orderList");
+    },
+    editCondition(state, { payload }) {
+      state.orderList[
+        state.orderList.findIndex((order) => order.id === payload.id)
+      ].condition = payload.condition;
+      state.filterOrderList[
+        state.filterOrderList.findIndex((order) => order.id === payload.id)
+      ].condition = payload.condition;
+      localStorage.setItem("orderList", JSON.stringify(state.orderList));
+    },
   },
 });
 
 export const orderReducer = orderSlice.reducer;
-export const { setSelectedOrderFilterId } = orderSlice.actions;
+export const {
+  setSelectedOrderFilterId,
+  setSelectedTimeId,
+  setSelectedPaymentId,
+  addOrder,
+  editCondition,
+  deleteOrders,
+} = orderSlice.actions;
 
 export const selectFilterOrderList = (state: {
   orders: { filterOrderList: TOrderList[] };
@@ -178,3 +81,8 @@ export const selectOrderFilterId = (state: {
 }) => state.orders.selectedOrderFilterId;
 export const selectTotalPrice = (state: { orders: { totalPrice: number } }) =>
   state.orders.totalPrice;
+export const selectTimeId = (state: { orders: { selectedTimeId: string } }) =>
+  state.orders.selectedTimeId;
+export const selectPaymentId = (state: {
+  orders: { selectedPaymentId: string };
+}) => state.orders.selectedPaymentId;

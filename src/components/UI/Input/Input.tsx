@@ -1,12 +1,15 @@
+import { ChangeEventHandler } from "react";
+
 type TProps = {
   type: string;
   className: string;
-  onChange: () => void;
+  onChange: ChangeEventHandler<HTMLInputElement>;
   value: string;
   checked: boolean;
   disabled: boolean;
   placeholder: string;
   maxLength: number;
+  required: boolean
 };
 
 export const Input = ({
@@ -17,7 +20,8 @@ export const Input = ({
   checked,
   disabled,
   placeholder,
-  maxLength
+  maxLength,
+  required
 }: TProps) => {
   return (
     <input
@@ -29,6 +33,7 @@ export const Input = ({
       disabled={disabled}
       placeholder={placeholder}
       maxLength={maxLength}
+      required={required}
     />
   );
 };
@@ -42,4 +47,5 @@ Input.defaultProps = {
   disabled: false,
   placeholder: "",
   maxLength: 50,
+  required: false,
 };

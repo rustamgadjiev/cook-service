@@ -4,24 +4,30 @@ import { useAppDispatch } from "@/store/store";
 import { deleteAccount, editData } from "@/store/slices/userData/userData";
 import { useRouter } from "next/router";
 import { setLoggedIn } from "@/store/slices/registration/registration";
+import { deleteCards } from "@/store/slices/cards/cards";
+import { deleteOrders } from "@/store/slices/orders/orders";
+import { deleteAdresses } from "@/store/slices/address/address";
 
 type TProps = {
-  nameValue: string;
-  telValue: string;
+  name: string;
+  phone: string;
 };
 
-export const Buttons = ({ nameValue, telValue }: TProps) => {
+export const Buttons = ({ name, phone }: TProps) => {
   const dispatch = useAppDispatch();
   const navigate = useRouter();
 
   const handleDeleteAccount = () => {
     dispatch(deleteAccount());
+    dispatch(deleteCards());
+    dispatch(deleteOrders());
+    dispatch(deleteAdresses());
     dispatch(setLoggedIn(false));
     navigate.push("/");
   };
 
   const handleSaveData = () => {
-    dispatch(editData({ name: nameValue, tel: telValue }));
+    dispatch(editData({ name, phone }));
   };
 
   return (

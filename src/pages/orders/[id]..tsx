@@ -1,7 +1,14 @@
-import { OrderContent } from "@/components/OrderContent/OrderContent";
 import { Title } from "@/components/UI/Title/Title";
-import { selectOrderList } from "@/store/slices/orders/orders";
-import { useAppSelector } from "@/store/store";
+import { TITLE } from "@/utils/constants";
+import dynamic from "next/dynamic";
+import Head from "next/head";
+
+const OrderContent = dynamic(
+  () => import("@/components/OrderContent/OrderContent"),
+  {
+    ssr: false,
+  }
+);
 
 type TProps = {
   id: string;
@@ -15,10 +22,15 @@ export async function getServerSideProps(context: any) {
 
 const OrderPage = ({ id }: TProps) => {
   return (
-    <div className="container">
-      <Title>№{id}</Title>
-      <OrderContent id={+id} />
-    </div>
+    <>
+      <Head>
+        <title>{`${TITLE} | Заказ №${id}`}</title>
+      </Head>
+      <div className="container">
+        <Title>№{id}</Title>
+        <OrderContent id={+id} />
+      </div>
+    </>
   );
 };
 

@@ -6,20 +6,16 @@ import { useAppSelector } from "@/store/store";
 import { selectUserData } from "@/store/slices/userData/userData";
 
 export const DataContent = () => {
-  const { name, tel } = useAppSelector(selectUserData);
+  const { name: currentName, phone: currentPhone } =
+    useAppSelector(selectUserData);
 
-  const [nameValue, setNameValue] = useState<string>(name || "");
-  const [telValue, setTelValue] = useState<string>(tel || "");
+  const [name, setName] = useState<string>(currentName || "");
+  const [phone, setPhone] = useState<string>(currentPhone || "");
 
   return (
     <div className={s.content}>
-      <Inputs
-        nameValue={nameValue}
-        setNameValue={setNameValue}
-        telValue={telValue}
-        setTelValue={setTelValue}
-      />
-      <Buttons nameValue={nameValue} telValue={telValue} />
+      <Inputs name={name} setName={setName} phone={phone} setPhone={setPhone} />
+      <Buttons name={name} phone={phone} />
     </div>
   );
 };

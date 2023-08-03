@@ -41,7 +41,13 @@ export const FoodItem = ({
         </Portal>
       )}
       <div className={s.img}>
-        <img width={292} height={292} src={imageUrl} alt="food" />
+        <img
+          width={292}
+          height={292}
+          src={imageUrl}
+          alt="food"
+          loading="lazy"
+        />
       </div>
       <Content item={item} setIsViewModal={setIsViewModal} />
     </div>

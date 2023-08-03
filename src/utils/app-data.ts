@@ -12,6 +12,10 @@ import OnGoingIcon from "@/assets/images/icons/ongoing.svg";
 import DeliveredIcon from "@/assets/images/icons/delivered.svg";
 import CompletedIcon from "@/assets/images/icons/condition-completed.svg";
 import CookIcon from "@/assets/images/icons/cook.svg";
+import DepositIcon from "@/assets/images/icons/deposit.svg";
+import OnlinePayIcon from "@/assets/images/icons/online-pay.svg";
+import CardCourierIcon from "@/assets/images/icons/card-courier.svg";
+import CashIcon from "@/assets/images/icons/cash.svg";
 
 type TUserMenuList = { title: string; link: string };
 
@@ -42,18 +46,22 @@ export const userMenuList: TUserMenuList[] = [
 ];
 
 export const footerList = [
-  { title: "WhatsApp", icon: WhatsAppIcon, link: "#" },
-  { title: "Меню для частных клиентов", icon: FoodIcon, link: "#" },
+  { title: "WhatsApp", icon: WhatsAppIcon, link: "https://whatsapp.com" },
+  { title: "Меню для частных клиентов", icon: FoodIcon, link: "/" },
   {
     title: "Политика конфиденциальности",
     icon: FileIcon,
     link: "/confidential",
   },
   { title: "+7 (945) 450-46-60", icon: PhoneIcon, link: "tel: 79454504660" },
-  { title: "Меню для корпоративных заказов", icon: OrderIcon, link: "#" },
+  { title: "Меню для корпоративных заказов", icon: OrderIcon, link: "/" },
   { title: "Пользовательское соглашение", icon: AgreementIcon, link: "/rules" },
-  { title: "Написать на E-mail", icon: MailIcon, link: "#" },
-  { title: "О доставке", icon: ScooterIcon, link: "#" },
+  {
+    title: "Написать на E-mail",
+    icon: MailIcon,
+    link: "mailto:example@mail.ru",
+  },
+  { title: "О доставке", icon: ScooterIcon, link: "/cart/place-order" },
 ];
 
 export const sliderList = [
@@ -122,4 +130,41 @@ export const conditionList = [
   { title: "Готовиться", icon: CookIcon, id: 1 },
   { title: "В доставке", icon: DeliveredIcon, id: 2 },
   { title: "Готово", icon: CompletedIcon, id: 3 },
+];
+
+export const paymentList = [
+  {
+    title: "Депозит",
+    icon: DepositIcon,
+  },
+  {},
+  {
+    title: "Оплата онлайн",
+    icon: OnlinePayIcon,
+  },
+  {
+    title: "Картой курьеру",
+    icon: CardCourierIcon,
+  },
+  {
+    title: "Наличные",
+    icon: CashIcon,
+  },
+];
+
+export const timeList = ["Как можно скорее", "Позже"];
+
+export const months = [
+  "января",
+  "февраля",
+  "марта",
+  "апреля",
+  "мая",
+  "июня",
+  "июля",
+  "августа",
+  "сентября",
+  "октября",
+  "ноября",
+  "декабря",
 ];

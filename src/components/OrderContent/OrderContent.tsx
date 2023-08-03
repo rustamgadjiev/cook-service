@@ -9,7 +9,7 @@ type TProps = {
   id: number;
 };
 
-export const OrderContent = ({ id }: TProps) => {
+const OrderContent = ({ id }: TProps) => {
   const orderItem = useAppSelector(selectOrderList).find(
     (item) => item.id === id
   );
@@ -17,18 +17,19 @@ export const OrderContent = ({ id }: TProps) => {
   return (
     <div className={s.content}>
       <Condition condition={orderItem?.condition} date={orderItem?.date} />
-      <Items foods={orderItem?.foods} />
+      <Items foods={orderItem?.foods} totalPrice={orderItem?.price} deliveryPrice={orderItem?.deliveryPrice} />
       <div className={s.list}>
-        <span>Когда</span>Как можно скорее
+        <span>Когда</span>{orderItem?.time}
       </div>
       <div className={s.list}>
-        <span>Куда</span>Пресненская набережная, 10с1, кв./офис 250, подъезд 1,
-        этаж 25, домофон 250
+        <span>Куда</span>{orderItem?.address}
       </div>
       <div className={s.list}>
-        <span>Оплата</span>Картой курьеру
+        <span>Оплата</span>{orderItem?.payment}
       </div>
-      <Buttons condition={orderItem?.condition} />
+      <Buttons condition={orderItem?.condition} id={id} />
     </div>
   );
 };
+
+export default OrderContent;

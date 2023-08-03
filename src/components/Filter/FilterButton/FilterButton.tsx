@@ -2,7 +2,6 @@ import {
   selectFilter,
   setSelectedFilterId,
 } from "@/store/slices/filter/filter";
-import { selectIsLoggedIn } from "@/store/slices/registration/registration";
 import { useAppDispatch, useAppSelector } from "@/store/store";
 import { Button } from "../../UI/Button/Button";
 

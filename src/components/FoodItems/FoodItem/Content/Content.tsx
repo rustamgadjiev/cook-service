@@ -13,7 +13,7 @@ export const Content = ({ item, setIsViewModal }: TProps) => {
   const dispatch = useAppDispatch();
 
   const handleClickItem = () => {
-    dispatch(setSelectedItem({ ...item }));
+    dispatch(setSelectedItem(item));
     setIsViewModal(true);
   };
 

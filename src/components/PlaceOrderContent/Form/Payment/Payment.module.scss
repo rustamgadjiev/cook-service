@@ -1,0 +1,55 @@
+.payment {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 27px 20px;
+    border-radius: 13px;
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+
+    &>span {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        svg {
+            width: 23px;
+        }
+    }
+
+    .menu {
+        position: absolute;
+        z-index: 11;
+        top: 100%;
+        left: 0;
+        background-color: #212629;
+        color: #fff;
+        width: 100%;
+        border-radius: 0 0 40px 5px;
+        padding: 2px 20px 31px 22px;
+        overflow: hidden;
+        font-weight: 300;
+        box-shadow: 40px 40px 50px 0px rgba(0, 0, 0, 0.50), 2px 2px 30px 0px rgba(0, 0, 0, 0.05);
+
+        li {
+            padding: 20px 0;
+            width: 100%;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            svg {
+                width: 20px;
+                fill: #fff;
+            }
+
+            &:hover {
+                border-bottom-color: #fff;
+            }
+        }
+    }
+}

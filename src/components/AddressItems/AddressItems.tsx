@@ -1,6 +1,6 @@
 import { useAppSelector } from "@/store/store";
 import { Button } from "../UI/Button/Button";
-import { AddressItem } from "./AddressItem/AddressItem";
+import AddressItem from "./AddressItem/AddressItem";
 import s from "./AddressItems.module.scss";
 import { selectAddressList } from "@/store/slices/address/address";
 import Link from "next/link";

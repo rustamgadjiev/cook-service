@@ -1,5 +1,7 @@
 import { CardForm } from "@/components/CardForm/CardForm";
 import { Title } from "@/components/UI/Title/Title";
+import { TITLE } from "@/utils/constants";
+import Head from "next/head";
 
 type TProps = {
   id: string;
@@ -13,10 +15,15 @@ export async function getServerSideProps(context: any) {
 
 const CardPage = ({ id }: TProps) => {
   return (
-    <div className="container">
-      <Title>Visa</Title>
-      <CardForm id={+id} />
-    </div>
+    <>
+      <Head>
+        <title>{`${TITLE} | Привязанная карта`}</title>
+      </Head>
+      <div className="container">
+        <Title>Visa</Title>
+        <CardForm id={+id} />
+      </div>
+    </>
   );
 };
 

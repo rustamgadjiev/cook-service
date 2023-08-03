@@ -1,6 +1,6 @@
 export type TUserData = {
   name?: string;
-  tel?: string;
+  phone?: string;
 };
 
 export type TInitialState = {

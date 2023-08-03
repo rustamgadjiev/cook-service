@@ -3,7 +3,7 @@ import s from "./AddressItem.module.scss";
 import Link from "next/link";
 import { TAddressList } from "@/store/slices/address/types";
 
-export const AddressItem = ({
+const AddressItem = ({
   title,
   city,
   street,
@@ -15,8 +15,12 @@ export const AddressItem = ({
     <Link href={`/address/${id}`}>
       <Button className={`white-btn ${s.item}`}>
         <h2>{title}</h2>
-        <p>{`г.${city} ул.${street} Дом ${home} кв. ${flatNumber}`}</p>
+        <p>{`${city} ул.${street} Дом ${home} ${
+          flatNumber ? `кв. ${flatNumber}` : ""
+        }`}</p>
       </Button>
     </Link>
   );
 };
+
+export default AddressItem;

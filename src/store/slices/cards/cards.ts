@@ -20,11 +20,15 @@ const cardsSlice = createSlice({
       state.cardList.push(payload);
       localStorage.setItem("cardList", JSON.stringify(state.cardList));
     },
+    deleteCards(state) {
+      state.cardList = [];
+      localStorage.removeItem("cardList");
+    },
   },
 });
 
 export const cardsReducer = cardsSlice.reducer;
-export const { deleteCard, addCard } = cardsSlice.actions;
+export const { deleteCard, addCard, deleteCards } = cardsSlice.actions;
 
 export const selectCardList = (state: { cards: { cardList: TCardList[] } }) =>
   state.cards.cardList;

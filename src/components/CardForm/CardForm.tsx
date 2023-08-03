@@ -63,6 +63,7 @@ export const CardForm = ({ id }: TProps) => {
             value={isDisabled ? card?.number : numberValue}
             onChange={(e) => setNumberValue(e.target.value)}
             disabled={isDisabled}
+            required
           />
         </label>
         <label>
@@ -74,6 +75,7 @@ export const CardForm = ({ id }: TProps) => {
             value={isDisabled ? card?.date : dateValue}
             onChange={(e) => setDateValue(e.target.value)}
             disabled={isDisabled}
+            required
           />
         </label>
       </div>
@@ -87,6 +89,7 @@ export const CardForm = ({ id }: TProps) => {
               setNameValue(e.target.value)
             }
             disabled={isDisabled}
+            required
           />
         </label>
         <label>
@@ -100,6 +103,7 @@ export const CardForm = ({ id }: TProps) => {
             }
             disabled={isDisabled}
             maxLength={3}
+            required
           />
         </label>
       </div>

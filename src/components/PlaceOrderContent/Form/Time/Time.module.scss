@@ -1,0 +1,47 @@
+.time {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 27px 20px;
+    border-radius: 13px;
+    position: relative;
+    z-index: 9;
+    overflow: hidden;
+
+    &>span {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .menu {
+        position: absolute;
+        z-index: 11;
+        top: 100%;
+        left: 0;
+        background-color: #212629;
+        width: 100%;
+        border-radius: 0 0 40px 5px;
+        box-shadow: 40px 40px 50px 0px rgba(0, 0, 0, 0.50), 2px 2px 30px 0px rgba(0, 0, 0, 0.05);
+        padding: 20px 20px 20px 20px;
+        color: #fff;
+
+        li {
+            border-radius: 30px 30px 30px 3px;
+            background: rgba(0, 0, 0, 0.25);
+            padding: 20px 67px 20px 20px;
+            text-align: left;
+            cursor: pointer;
+            font-weight: 300;
+            border: 1px solid transparent;
+
+            &:not(:last-child) {
+                margin-bottom: 10px;
+            }
+
+            &:hover {
+                border-color: #fff;
+            }
+        }
+    }
+}

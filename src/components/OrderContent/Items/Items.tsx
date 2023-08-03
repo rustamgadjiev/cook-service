@@ -1,7 +1,7 @@
-import { useAppSelector } from "@/store/store";
+import { selectTotalPrice } from "@/store/slices/cart/cart";
 import s from "./Item.module.scss";
 import { Item } from "./Item/Item";
-import { selectTotalPrice } from "@/store/slices/orders/orders";
+import { useAppSelector } from "@/store/store";
 
 type TProps = {
   foods:
@@ -13,12 +13,11 @@ type TProps = {
         count: number;
       }[]
     | undefined;
+  totalPrice?: number;
+  deliveryPrice?: number;
 };
 
-export const Items = ({ foods }: TProps) => {
-  // const totalPrice = useAppSelector(selectTotalPrice);
-  const totalPrice = foods?.reduce((a, b) => a + b.price, 0);
-
+export const Items = ({ foods, totalPrice, deliveryPrice }: TProps) => {
   return (
     <div className={s.items}>
       {foods?.map((food) => (
@@ -26,7 +25,7 @@ export const Items = ({ foods }: TProps) => {
       ))}
       <div className={s.delivery}>
         <span>Доставка</span>
-        <span>{Math.round(totalPrice / 5)}₽</span>
+        <span>{deliveryPrice}₽</span>
       </div>
       <div className={s.totalPrice}>
         <span>Итого</span>

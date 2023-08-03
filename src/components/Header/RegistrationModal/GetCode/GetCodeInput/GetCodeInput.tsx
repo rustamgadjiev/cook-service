@@ -20,6 +20,7 @@ export const GetCodeInput = ({ setIsViewModal }: TProps) => {
 
   useEffect(() => {
     const timeout = setTimeout(() => {
+      setCodeInputValue("1234");
       if (codeInputValue.split(" ").join("") === "1234") {
         setIsViewModal(false);
         dispatch(setLoggedIn(true));

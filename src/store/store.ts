@@ -7,6 +7,8 @@ import { orderReducer } from "./slices/orders/orders";
 import { cardsReducer } from "./slices/cards/cards";
 import { addressReducer } from "./slices/address/address";
 import { userDataReducer } from "./slices/userData/userData";
+import { cartReducer } from "./slices/cart/cart";
+import { depositReducer } from "./slices/deposit/deposit";
 
 export const store = configureStore({
   reducer: {
@@ -17,6 +19,8 @@ export const store = configureStore({
     cards: cardsReducer,
     address: addressReducer,
     userData: userDataReducer,
+    cart: cartReducer,
+    deposit: depositReducer
   },
 });
 

@@ -222,14 +222,13 @@
     "id": "18"
   },
   {
-    "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/ComboTemplates/22e5d9108dfc45039916b5170e61f48d_292x292.webp",
-    "price": 4039,
-    "weight": "10шт",
-    "calories": 300,
-    "title": "10 пицц",
-    "description": "Великолепная десятка. 10 средних пицц на любой вкус. Для компании из 20-30 человек. Цена комбо зависит от выбранных пицц и может быть увеличена",
-    "category": 3,
-    "type": 1,
+    "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/c65d065f6e654aa2a20787a9e806e04d_292x292.webp",
+    "price": 189,
+    "weight": "180г",
+    "calories": 228,
+    "title": "Додстер Карри",
+    "description": "Горячая закуска с цыпленком, ананасом, сладким перцем, моцареллой и пряным соусом карри в тонкой пшеничной лепешке",
+    "category": 1,
     "more": [],
     "id": "19"
   },
@@ -280,5 +279,33 @@
       { "title": "Пикантная пепперони", "addPrice": 69 }
     ],
     "id": "23"
+  },
+  {
+    "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/b3e4267e06334a428dcc9f1f10a72f34_292x292.webp",
+    "price": 99,
+    "weight": "0,4л",
+    "calories": 17,
+    "title": "Кофе Американо",
+    "description": "Пара глотков горячего Американо, и вы будете готовы покорять этот день",
+    "category": 6,
+    "more": [
+      { "title": "Молоко", "addPrice": 15 }
+    ],
+    "id": "24"
+  },
+  {
+    "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/d45790074f574ccfa9c75884dfe55f09_292x292.webp",
+    "price": 149,
+    "weight": "0,4л",
+    "calories": 55,
+    "title": "Кофе Капучино",
+    "description": "Король среди кофейных напитков — классический капучино. Для любителей сбалансированного кофейно-молочного вкуса",
+    "category": 6,
+    "more": [
+      { "title": "Карамельный сироп", "addPrice": 20 },
+      { "title": "Ореховый сироп", "addPrice": 20 },
+      { "title": "Кокосовый сироп", "addPrice": 20 }
+    ],
+    "id": "25"
   }
 ]

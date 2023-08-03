@@ -13,9 +13,8 @@
         gap: 30px;
         width: 100%;
         
-        &.coment textarea {
-            height: 140px;
-            resize: none;
+        &.coment input {
+            padding-bottom: 100px;
         }
 
         &:not(:first-child) {
@@ -37,6 +36,11 @@
         position: relative;
         padding-top: 20px;
         flex: 1 1 auto;
+
+        input:focus,
+        textarea:focus {
+            border-color: #333;
+        }
 
         span {
             position: absolute;

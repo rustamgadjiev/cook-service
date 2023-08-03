@@ -1,9 +1,12 @@
 import { conditionList } from "@/utils/app-data";
 import s from "./Condition.module.scss";
+import { useEffect } from "react";
+import { useAppDispatch } from "@/store/store";
+import { editCondition } from "@/store/slices/orders/orders";
 
 type TProps = {
-  condition: number | undefined;
-  date: string | undefined;
+  condition?: number;
+  date?: string;
 };
 
 export const Condition = ({ condition, date }: TProps) => {
@@ -17,10 +20,7 @@ export const Condition = ({ condition, date }: TProps) => {
       ) : (
         <div>
           {conditionList.map((item) => (
-            <span
-              key={item.id}
-              className={item.id === 1 ? s.active : ""}
-            >
+            <span key={item.id} className={item.id === 1 ? s.active : ""}>
               <item.icon />
               <p>{item.title}</p>
             </span>

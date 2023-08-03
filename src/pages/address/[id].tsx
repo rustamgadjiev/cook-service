@@ -1,5 +1,7 @@
 import { AddressForm } from "@/components/AddressForm/AddressForm";
 import { Title } from "@/components/UI/Title/Title";
+import { TITLE } from "@/utils/constants";
+import Head from "next/head";
 
 type TProps = {
   id: string;
@@ -13,10 +15,15 @@ export async function getServerSideProps(context: any) {
 
 const AddressPage = ({ id }: TProps) => {
   return (
-    <div className="container">
-      <Title>Мои адреса</Title>
-      <AddressForm id={+id} />
-    </div>
+    <>
+      <Head>
+        <title>{`${TITLE} | Мой адрес`}</title>
+      </Head>
+      <div className="container">
+        <Title>Мой адрес</Title>
+        <AddressForm id={+id} />
+      </div>
+    </>
   );
 };
 

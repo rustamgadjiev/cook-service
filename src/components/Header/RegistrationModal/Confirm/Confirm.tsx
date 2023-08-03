@@ -17,7 +17,7 @@ export const Confirm = () => {
     e.preventDefault();
 
     dispatch(setContentId(2));
-    dispatch(editData({ tel: phone }));
+    dispatch(editData({ phone }));
     
 
     // fetch("https://6481fbdb29fa1c5c50326b3a.mockapi.io/users")

@@ -3,6 +3,8 @@ export type TInitialState = {
   filterOrderList: TOrderList[];
   selectedOrderFilterId: number;
   totalPrice: number;
+  selectedTimeId: string;
+  selectedPaymentId: string;
 };
 
 export type TOrderList = {
@@ -10,11 +12,16 @@ export type TOrderList = {
   id: number;
   date: string;
   price: number;
+  address: string;
+  payment: string;
+  time: string;
+  deliveryPrice: number;
   foods: {
     title: string;
     price: number;
     imageUrl: string;
     id: string;
     count: number;
+    mores: any,
   }[];
 };

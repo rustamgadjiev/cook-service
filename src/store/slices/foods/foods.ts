@@ -10,7 +10,7 @@ const foodsSlice = createSlice({
   initialState,
   reducers: {
     setSelectedItem(state, { payload }) {
-      state.selectedItem = payload;
+      state.selectedItem = { ...state.selectedItem, ...payload };
     },
   },
 });
