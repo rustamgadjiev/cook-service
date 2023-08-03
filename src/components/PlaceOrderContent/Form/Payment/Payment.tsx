@@ -21,7 +21,7 @@ const Payment = ({ isVisible, setVisibleId }: TProps) => {
   const paymentId = useAppSelector(selectPaymentId);
   const dispatch = useAppDispatch();
 
-  const currentElement =
+  const currentElement: any =
     paymentList.find((payment) => payment.title === paymentId) ||
     cardList.find((card) => card.number === paymentId);
 
