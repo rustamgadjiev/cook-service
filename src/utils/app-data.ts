@@ -38,7 +38,6 @@ export const ordersFilterList: string[] = [
 
 export const userMenuList: TUserMenuList[] = [
   { title: "Мои заказы", link: "/orders" },
-  { title: "Депозит", link: "/deposit" },
   { title: "Привязанные карты", link: "/cards" },
   { title: "Мои адреса", link: "/address" },
   { title: "Мои данные", link: "/my-data" },
@@ -133,10 +132,6 @@ export const conditionList = [
 ];
 
 export const paymentList = [
-  {
-    title: "Депозит",
-    icon: DepositIcon,
-  },
   {},
   {
     title: "Оплата онлайн",
