@@ -46,21 +46,21 @@ export const userMenuList: TUserMenuList[] = [
 
 export const footerList = [
   { title: "WhatsApp", icon: WhatsAppIcon, link: "https://whatsapp.com" },
-  { title: "Меню для частных клиентов", icon: FoodIcon, link: "/" },
+  { title: "Меню для частных клиентов", icon: FoodIcon, link: "#" },
   {
     title: "Политика конфиденциальности",
     icon: FileIcon,
     link: "/confidential",
   },
   { title: "+7 (945) 450-46-60", icon: PhoneIcon, link: "tel: 79454504660" },
-  { title: "Меню для корпоративных заказов", icon: OrderIcon, link: "/" },
+  { title: "Меню для корпоративных заказов", icon: OrderIcon, link: "#" },
   { title: "Пользовательское соглашение", icon: AgreementIcon, link: "/rules" },
   {
     title: "Написать на E-mail",
     icon: MailIcon,
     link: "mailto:example@mail.ru",
   },
-  { title: "О доставке", icon: ScooterIcon, link: "/cart/place-order" },
+  { title: "О доставке", icon: ScooterIcon, link: "#" },
 ];
 
 export const sliderList = [

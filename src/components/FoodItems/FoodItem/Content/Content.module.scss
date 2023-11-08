@@ -1,5 +1,5 @@
 .content {
-    padding: 20px;
+    padding: 20px 20px 40px;
     cursor: pointer;
 
     .title {
@@ -9,38 +9,51 @@
 
     }
 
-    .info {
-        font-weight: 300;
-        font-size: 18px;
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        color: rgba(33, 38, 41, 0.5);
-        margin-bottom: 20px;
-
-        .price {
-            font-weight: 700;
-        }
-
-        span {
-            position: relative;
-
-            &:not(:last-child):before {
-                content: '·';
-                color: rgba(33, 38, 41, 0.2);
-                font-size: 30px;
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                right: -12px;
-            }
-        }
-    }
-
     .description {
         color: rgba(33, 38, 41, 0.6);
         font-weight: 300;
         font-size: 17px;
         margin-bottom: 30px;
+    }
+}
+
+.bottom {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 20px;
+    cursor: default;
+
+    button {
+        background-color: rgb(255, 240, 230);
+        color: rgb(209, 87, 0);
+        padding: 8px 20px;
+        border-radius: 50px;
+
+        &:hover {
+            background-color: rgb(255, 210, 179);
+            color: rgb(209, 87, 0);
+        }
+    }
+    .price {
+        font-weight: 300;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        color: rgb(33, 38, 41);
+
+        &:not(:last-child):before {
+            content: '·';
+            color: rgba(33, 38, 41, 0.2);
+            font-size: 30px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: -12px;
+        }
     }
 }
